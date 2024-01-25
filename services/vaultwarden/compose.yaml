@@ -1,0 +1,21 @@
+version: "3.3"
+services:
+  vaultwarden:
+    volumes:
+      - ./vw-data/:/data/
+    restart: unless-stopped
+    image: vaultwarden/server:latest
+    labels:
+      caddy: "http://vault.${MAIN_DOMAIN}"
+      caddy.reverse_proxy: "{{upstreams 80}}"
+      caddy.tls: internal
+    ports:
+      - 8555:80
+    networks:
+      - caddy
+    environment:
+      - DOMAIN="https://vault.${MAIN_DOMAIN}"
+      - IP_HEADER=CF-Connecting-IP
+networks:
+  caddy:
+    external: true
