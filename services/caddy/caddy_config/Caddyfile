@@ -7,11 +7,6 @@
 }
 
 http://{$MAIN_DOMAIN:localhost} {
-	handle {
-		basicauth {
-			user {$BASIC_AUTH_PASS}
-		}
-	}
 	respond "Hello, world!"
 }
 

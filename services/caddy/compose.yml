@@ -5,6 +5,8 @@ services:
     ports:
       - 80:80
       - 443:443
+    env_file:
+      - ../.env.shared
     environment:
       - CADDY_INGRESS_NETWORKS=caddy
       - CADDY_DOCKER_CADDYFILE_PATH=/caddy_config/Caddyfile
