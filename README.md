@@ -1,5 +1,5 @@
 # Selfhosted
-My self-hosting setup.
+My approach to self-hosting. Single node (no k8s or Docker Swarm).
 
 ### Core ingredients
 - Docker/Compose
@@ -11,7 +11,10 @@ My self-hosting setup.
 - [Reaction](https://framagit.org/ppom/reaction): Scan logs and take action. As an alternative to fail2ban.
 
 ## TODO
-- [] Don't share same network beteewn Caddy and rest of containers
-- [] Use Caddy auto-https
-- [] Authelia
-- [] `reaction` as fail2ban alternative
+- [ ] Don't share same network beteewn Caddy and rest of containers
+- [ ] Use Caddy auto-https
+- [ ] Authelia
+- [ ] `reaction` to vaultwarden repeated wrong passwords
+- [ ] `reaction` to sub-domain enumeration
+- [ ] Tailscale split DNS
+
